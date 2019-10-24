@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      When N = 4 and S = {3,1,2}, there are 4 solutions: {1,3}, {1,1,1,1}, {1,1,2}, and {2,2}.
  *      When N = 10 and S = {2, 5, 3, 6}, there are 5 solutions: {2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5}, and {5,5}.
  */
-public class AmountCombiningCoins {
+class AmountCombiningCoins {
 
     @Test
     void test0() {
