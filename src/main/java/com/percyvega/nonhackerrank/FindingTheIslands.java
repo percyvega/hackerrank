@@ -1,6 +1,7 @@
 package com.percyvega.nonhackerrank;
 
-import javafx.util.Pair;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -92,4 +93,11 @@ class FindingTheIslands {
         }
     }
 
+}
+
+@Data
+@AllArgsConstructor
+class Pair<F, S> {
+    private F key;
+    private S value;
 }
