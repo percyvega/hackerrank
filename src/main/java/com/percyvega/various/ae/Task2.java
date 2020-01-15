@@ -1,12 +1,9 @@
-package com.percyvega.nonhackerrank.ae;
+package com.percyvega.various.ae;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-/**
- *
- */
 class Task2 {
 
     @Test
@@ -34,10 +31,10 @@ class Task2 {
 
         printArrayOfLength(d, l);
 
-        for (p = 1; p < l/2 + 1; ++p) {
+        for (p = 1; p < l / 2 + 1; ++p) {
             int i;
             boolean ok = true;
-            for (i = 0; i < l/2; ++i) {
+            for (i = 0; i < l / 2; ++i) {
                 if (d[i] != d[i + p]) {
                     ok = false;
                     break;
@@ -52,12 +49,12 @@ class Task2 {
 
     @Test
     void testPrintArrayOfLength() {
-        printArrayOfLength(new int[] {1, 2, 3, 4, 5}, 3);
+        printArrayOfLength(new int[]{1, 2, 3, 4, 5}, 3);
     }
 
     private void printArrayOfLength(int[] d, int l) {
         StringBuilder toPrint = new StringBuilder();
-        for (int i = l - 1; i >= 0 ; i--) {
+        for (int i = l - 1; i >= 0; i--) {
             toPrint.append(d[i]);
         }
         System.out.println(toPrint);

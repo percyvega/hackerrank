@@ -1,4 +1,4 @@
-package com.percyvega.hackerrank.interview_preparation_kit.arrays;
+package com.percyvega.interviewpreparationkit.arrays;
 
 import org.junit.jupiter.api.Test;
 

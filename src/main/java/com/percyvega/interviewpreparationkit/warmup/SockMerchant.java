@@ -1,4 +1,4 @@
-package com.percyvega.hackerrank.interview_preparation_kit.warm_up;
+package com.percyvega.interviewpreparationkit.warmup;
 
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;

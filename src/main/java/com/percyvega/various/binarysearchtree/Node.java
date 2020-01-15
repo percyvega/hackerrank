@@ -1,4 +1,4 @@
-package com.percyvega.nonhackerrank.bst;
+package com.percyvega.various.binarysearchtree;
 
 public class Node {
 

@@ -1,4 +1,4 @@
-package com.percyvega.nonhackerrank.ae;
+package com.percyvega.various.ae;
 
 import org.junit.jupiter.api.Test;
 

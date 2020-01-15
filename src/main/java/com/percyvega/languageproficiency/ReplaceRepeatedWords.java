@@ -1,4 +1,4 @@
-package com.percyvega.hackerrank.language_proficiency;
+package com.percyvega.languageproficiency;
 
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;

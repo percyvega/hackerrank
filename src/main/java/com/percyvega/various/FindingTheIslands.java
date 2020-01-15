@@ -1,4 +1,4 @@
-package com.percyvega.nonhackerrank;
+package com.percyvega.various;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
