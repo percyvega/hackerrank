@@ -16,6 +16,14 @@ public class GenerateTwoListsBasedOnCondition {
     List<String> names = Arrays.asList("Nico", "Isa", "Fran", "Percy");
 
     @Test
+    void reading_the_list_once() {
+        Map<String, List<String>> collect = names.stream()
+                .collect(Collectors.groupingBy(s -> s.length() > 4 ? "gt4" : "ngt4"));
+        assertThat(collect.get("gt4")).containsExactly("Percy");
+        assertThat(collect.get("ngt4")).containsExactly("Nico", "Isa", "Fran");
+    }
+
+    @Test
     void reading_the_list_twice() {
         List<String> namesLengthGreaterThan4 = names.stream()
                 .filter(lengthGreaterThan4)
@@ -26,14 +34,6 @@ public class GenerateTwoListsBasedOnCondition {
 
         assertThat(namesLengthGreaterThan4).containsExactly("Percy");
         assertThat(namesLengthNotGreaterThan4).containsExactly("Nico", "Isa", "Fran");
-    }
-
-    @Test
-    void reading_the_list_once() {
-        Map<String, List<String>> collect = names.stream()
-                .collect(Collectors.groupingBy(s -> s.length() > 4 ? "gt4" : "ngt4"));
-        assertThat(collect.get("gt4")).containsExactly("Percy");
-        assertThat(collect.get("ngt4")).containsExactly("Nico", "Isa", "Fran");
     }
 
 }
