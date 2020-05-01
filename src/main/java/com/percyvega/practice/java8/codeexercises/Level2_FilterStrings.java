@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class FilterStrings {
+public class Level2_FilterStrings {
 
-    List<String> stringList = Arrays.asList("cat", "and", "pet", "abc");
+    List<String> stringList = Arrays.asList("cat", "and", "axyz", "pet", "abc");
 
     @Test
     void test() {

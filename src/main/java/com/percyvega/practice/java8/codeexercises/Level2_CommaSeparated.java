@@ -7,7 +7,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CommaSeparated {
+public class Level2_CommaSeparated {
 
     List<Integer> integerList = Arrays.asList(5, 8, 13);
     String expected = "e5,o8,e13";
@@ -20,10 +20,10 @@ public class CommaSeparated {
     public String getString(List<Integer> list) {
         return list.stream()
                 .map(integer -> Integer.toString(integer))
-                .reduce("", (s, s2) -> {
+                .reduce("", (s1, s2) -> {
                     String toReturn = "";
-                    if(s.length() != 0) {
-                        toReturn = s + ",";
+                    if(s1.length() != 0) {
+                        toReturn = s1 + ",";
                     }
                     toReturn += Integer.parseInt(s2) % 2 == 0 ? "o": "e";
                     toReturn += s2;

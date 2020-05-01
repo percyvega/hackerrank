@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ConvertToUpperCase {
+public class Level1_ConvertToUpperCase {
 
     List<String> stringList = Arrays.asList("Percy", "Francesca", "Nicholas", "Isabella");
     List<String> expected = Arrays.asList("PERCY", "FRANCESCA", "NICHOLAS", "ISABELLA");
