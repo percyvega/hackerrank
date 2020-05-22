@@ -1,4 +1,4 @@
-package com.percyvega.practice.hr;
+package com.percyvega.hr;
 
 import org.junit.jupiter.api.Test;
 

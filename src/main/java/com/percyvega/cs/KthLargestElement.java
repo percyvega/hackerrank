@@ -1,4 +1,4 @@
-package com.percyvega.cs.challenge;
+package com.percyvega.cs;
 
 import org.junit.jupiter.api.Test;
 
