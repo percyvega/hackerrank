@@ -1,4 +1,4 @@
-package com.percyvega.cs;
+package com.percyvega.codesignal;
 
 import org.junit.jupiter.api.Test;
 

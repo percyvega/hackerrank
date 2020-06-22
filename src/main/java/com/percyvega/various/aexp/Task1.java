@@ -1,4 +1,4 @@
-package com.percyvega.various.ae;
+package com.percyvega.various.aexp;
 
 import org.junit.jupiter.api.Test;
 

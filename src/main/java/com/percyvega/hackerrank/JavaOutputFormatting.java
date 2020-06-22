@@ -1,4 +1,4 @@
-package com.percyvega.hr;
+package com.percyvega.hackerrank;
 
 import org.junit.jupiter.api.Test;
 
