@@ -16,6 +16,7 @@ class LongestSubstringWithoutRepeatingCharacters {
         assertThat(longestSubstringWithoutRepeatingCharacters("ab")).isEqualTo("ab");
         assertThat(longestSubstringWithoutRepeatingCharacters("abc")).isEqualTo("abc");
         assertThat(longestSubstringWithoutRepeatingCharacters("cabc")).isEqualTo("cab");
+        assertThat(longestSubstringWithoutRepeatingCharacters("dddabc")).isEqualTo("dabc");
         assertThat(longestSubstringWithoutRepeatingCharacters("abrkaabcdefghijjxxx")).isEqualTo("abcdefghij");
     }
 
