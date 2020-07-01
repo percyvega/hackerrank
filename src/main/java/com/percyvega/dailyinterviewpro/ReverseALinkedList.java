@@ -19,7 +19,7 @@ public class ReverseALinkedList {
     private <T> Node<T> reverse(Node<T> node) {
         Node<T> nextNode = node.next;
 
-        if(nextNode == null) {
+        if (nextNode == null) {
             return node;
         }
 
@@ -27,7 +27,7 @@ public class ReverseALinkedList {
             nextNode = nextNode.next;
         }
 
-        if(!nextNode.isReversed) {
+        if (!nextNode.isReversed) {
             T data1 = node.data;
             T data2 = nextNode.data;
             nextNode.data = data1;
@@ -41,11 +41,11 @@ public class ReverseALinkedList {
         return node;
     }
 
-    static <T> Node<T> produceTreeHead(T... dataArray) {
+    private static <T> Node<T> produceTreeHead(T... dataArray) {
         return produceTreeHead(dataArray, 0);
     }
 
-    static <T> Node<T> produceTreeHead(T[] dataArray, int dataIndex) {
+    private static <T> Node<T> produceTreeHead(T[] dataArray, int dataIndex) {
         if (dataArray.length <= dataIndex) {
             return null;
         } else {
@@ -53,31 +53,31 @@ public class ReverseALinkedList {
             return new Node<>(data, produceTreeHead(dataArray, ++dataIndex));
         }
     }
-}
 
-class Node<T> {
-    T data;
-    Node<T> next;
-    boolean isReversed = false;
+    private static class Node<T> {
+        T data;
+        Node<T> next;
+        boolean isReversed = false;
 
-    Node(T data, Node<T> next) {
-        this.data = data;
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-
-        Node<T> node = this;
-        while (node != null) {
-            s.append(node.data);
-            node = node.next;
-            if(node != null) {
-                s.append(" -> ");
-            }
+        Node(T data, Node<T> next) {
+            this.data = data;
+            this.next = next;
         }
 
-        return s.toString();
+        @Override
+        public String toString() {
+            StringBuilder s = new StringBuilder();
+
+            Node<T> node = this;
+            while (node != null) {
+                s.append(node.data);
+                node = node.next;
+                if (node != null) {
+                    s.append(" -> ");
+                }
+            }
+
+            return s.toString();
+        }
     }
 }
