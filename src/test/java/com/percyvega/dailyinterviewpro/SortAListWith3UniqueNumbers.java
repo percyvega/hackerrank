@@ -9,10 +9,10 @@ import java.util.TreeMap;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j2
-public class SortAListWith3UniqueNumbers {
+class SortAListWith3UniqueNumbers {
 
     @Test
-    void isValidTest() {
+    void testThis() {
         assertThat(sortList(3, 3, 2, 1, 3, 2, 1)).isEqualTo(new int[]{1, 1, 2, 2, 3, 3, 3});
     }
 
