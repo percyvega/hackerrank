@@ -22,4 +22,14 @@ public class BTreePrinterTest {
         BTreePrinter.printNode(rootNode);
     }
 
+    @Test
+    void printNode4() {
+        Node<Integer> rootNode = Node.of(8,
+                2, 12,
+                1, 4, 10, 14,
+                null, null, 3, 7, null, null, null, null,
+                null, null, null, null, null, null, 6);
+        BTreePrinter.printNode(rootNode);
+    }
+
 }

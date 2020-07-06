@@ -26,9 +26,9 @@ public abstract class BTreePrinter {
 
         BTreePrinter.printWhitespaces(firstSpaces);
 
-        List<Node<T>> newNodes = new ArrayList<Node<T>>();
+        List<Node<T>> newNodes = new ArrayList<>();
         for (Node<T> node : nodes) {
-            if (node != null) {
+            if (node != null && node.value != null) {
                 System.out.print(node.value);
                 newNodes.add(node.left);
                 newNodes.add(node.right);
@@ -50,14 +50,14 @@ public abstract class BTreePrinter {
                     continue;
                 }
 
-                if (nodes.get(j).left != null)
+                if (nodes.get(j).left != null && nodes.get(j).left.value != null)
                     System.out.print("/");
                 else
                     BTreePrinter.printWhitespaces(1);
 
                 BTreePrinter.printWhitespaces(i + i - 1);
 
-                if (nodes.get(j).right != null)
+                if (nodes.get(j).right != null && nodes.get(j).right.value != null)
                     System.out.print("\\");
                 else
                     BTreePrinter.printWhitespaces(1);
@@ -65,7 +65,7 @@ public abstract class BTreePrinter {
                 BTreePrinter.printWhitespaces(endgeLines + endgeLines - i);
             }
 
-            System.out.println("");
+            System.out.println();
         }
 
         printNodeInternal(newNodes, level + 1, maxLevel);
