@@ -51,7 +51,7 @@ class ShortestStringWithNDifferentChars {
                 }
 
                 // optimization
-                if(!shortestString.isEmpty() && currentString.length() >= shortestString.length()) {
+                if (!shortestString.isEmpty() && currentString.length() >= shortestString.length()) {
                     break;
                 }
 

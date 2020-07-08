@@ -38,13 +38,13 @@ public class Level3_PackageRiceBags {
         int count5KiloBagsRequired = getCount5KiloBags(goalKilos);
 
         int count1KiloBagsRequired;
-        if(count5KiloBagsRequired <= bigRiceBags) {
+        if (count5KiloBagsRequired <= bigRiceBags) {
             count1KiloBagsRequired = goalKilos - (count5KiloBagsRequired * 5);
         } else {
             count1KiloBagsRequired = goalKilos - (bigRiceBags * 5);
         }
 
-        if(count1KiloBagsRequired > smallRiseBags) {
+        if (count1KiloBagsRequired > smallRiseBags) {
             return -1;
         } else {
             return count1KiloBagsRequired;

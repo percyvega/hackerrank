@@ -35,7 +35,7 @@ public class Level3_LongestCommonSequence {
             for (int j = 0; j < s2.length(); j++) {
                 String s22 = s2.substring(j);
                 String sequenceThatStarts = getSequenceThatStarts(s11, s22);
-                if(sequenceThatStarts.length() > longestCommonSequence.length()) {
+                if (sequenceThatStarts.length() > longestCommonSequence.length()) {
                     longestCommonSequence = sequenceThatStarts;
                 }
             }

@@ -22,10 +22,10 @@ public class Level2_CommaSeparated {
                 .map(integer -> Integer.toString(integer))
                 .reduce("", (s1, s2) -> {
                     String toReturn = "";
-                    if(s1.length() != 0) {
+                    if (s1.length() != 0) {
                         toReturn = s1 + ",";
                     }
-                    toReturn += Integer.parseInt(s2) % 2 == 0 ? "o": "e";
+                    toReturn += Integer.parseInt(s2) % 2 == 0 ? "o" : "e";
                     toReturn += s2;
 
                     return toReturn;

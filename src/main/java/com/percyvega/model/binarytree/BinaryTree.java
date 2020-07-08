@@ -1,20 +1,20 @@
-package com.percyvega.model;
+package com.percyvega.model.binarytree;
 
-public abstract class BTree {
+public abstract class BinaryTree {
 
-    public static boolean isBalanced(Node node) {
+    public static <T> boolean isBalanced(BinaryTreeNode<T> node) {
         if (node.left == null && node.right == null) {
             return true;
         }
 
-        if(Math.abs(height(node.left) - height(node.right)) > 1) {
+        if (Math.abs(height(node.left) - height(node.right)) > 1) {
             return false;
         }
 
         return isBalanced(node.left) && isBalanced(node.right);
     }
 
-    public static int height(Node node) {
+    public static <T> int height(BinaryTreeNode<T> node) {
         if (node == null) {
             return 0;
         }

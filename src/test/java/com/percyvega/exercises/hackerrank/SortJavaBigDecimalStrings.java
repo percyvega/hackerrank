@@ -52,12 +52,12 @@ public class SortJavaBigDecimalStrings {
                 BigDecimal y = new BigDecimal(s[j]);
 
                 int compareTo = x.compareTo(y);
-                if(compareTo < 0) {
+                if (compareTo < 0) {
                     String temp = s[i];
                     s[i] = s[j];
                     s[j] = temp;
                 } else if (compareTo == 0) {
-                    if(stringsList.indexOf(s[i]) > stringsList.indexOf(s[j])) {
+                    if (stringsList.indexOf(s[i]) > stringsList.indexOf(s[j])) {
                         String temp = s[i];
                         s[i] = s[j];
                         s[j] = temp;
