@@ -1,5 +1,6 @@
 package com.percyvega.exercises.dailyinterviewpro;
 
+import com.percyvega.model.binarytree.BinaryTree;
 import com.percyvega.model.binarytree.BinaryTreeNode;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -38,42 +39,42 @@ class FloorAndCeilingOfABinarySearchTree {
 
     @Test
     void testThis1() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8), 8)).containsExactly(null, 8);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8), 8)).containsExactly(null, 8);
     }
 
     @Test
     void testThis2() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4), 10)).containsExactly(8, null);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 10)).containsExactly(8, null);
     }
 
     @Test
     void testThis3() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4), 8)).containsExactly(null, 8);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 8)).containsExactly(null, 8);
     }
 
     @Test
     void testThis4() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4), 6)).containsExactly(8, 4);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 6)).containsExactly(8, 4);
     }
 
     @Test
     void testThis5() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4), 4)).containsExactly(8, 4);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 4)).containsExactly(8, 4);
     }
 
     @Test
     void testThis6() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4), 2)).containsExactly(4, null);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 2)).containsExactly(4, null);
     }
 
     @Test
     void testThis7() {
-        assertThat(findCeilingAndFloor(BinaryTreeNode.of(8, 4, 12, 2, 6, 10, 14), 5)).containsExactly(4, 6);
+        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4, 12, 2, 6, 10, 14), 5)).containsExactly(4, 6);
     }
 
     @Test
     void testThis8() {
-        BinaryTreeNode<Integer> rootNode = BinaryTreeNode.of(
+        BinaryTreeNode<Integer> rootNode = BinaryTree.of(
                 8,
                 2, 12,
                 1, 4, 10, 14,

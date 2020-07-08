@@ -12,19 +12,19 @@ public class BinaryTreePrinterTest {
 
     @Test
     void printNode2() {
-        BinaryTreeNode<Integer> rootNode = BinaryTreeNode.of(8, 4);
+        BinaryTreeNode<Integer> rootNode = BinaryTree.of(8, 4);
         BinaryTreePrinter.printNode(rootNode);
     }
 
     @Test
     void printNode3() {
-        BinaryTreeNode<Integer> rootNode = BinaryTreeNode.of(8, 4, 12, 2, 6, 10, 14);
+        BinaryTreeNode<Integer> rootNode = BinaryTree.of(8, 4, 12, 2, 6, 10, 14);
         BinaryTreePrinter.printNode(rootNode);
     }
 
     @Test
     void printNode4() {
-        BinaryTreeNode<Integer> rootNode = BinaryTreeNode.of(8,
+        BinaryTreeNode<Integer> rootNode = BinaryTree.of(8,
                 2, 12,
                 1, 4, 10, 14,
                 null, null, 3, 7, null, null, null, null,
