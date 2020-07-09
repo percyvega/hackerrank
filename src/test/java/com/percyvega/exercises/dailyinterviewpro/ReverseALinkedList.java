@@ -18,8 +18,8 @@ public class ReverseALinkedList {
         assertThat(reverse(LinkedList.of(3)).toString()).isEqualTo("3");
     }
 
-    private <T> LinkedListNode<T> reverse(LinkedListNode<T> node) {
-        LinkedListNode<T> nextNode = node.next;
+    private <E> LinkedListNode<E> reverse(LinkedListNode<E> node) {
+        LinkedListNode<E> nextNode = node.next;
 
         if (nextNode == null) {
             return node;
@@ -30,8 +30,8 @@ public class ReverseALinkedList {
         }
 
         if (!nextNode.isReversed) {
-            T data1 = node.data;
-            T data2 = nextNode.data;
+            E data1 = node.data;
+            E data2 = nextNode.data;
             nextNode.data = data1;
             nextNode.isReversed = true;
             node.data = data2;

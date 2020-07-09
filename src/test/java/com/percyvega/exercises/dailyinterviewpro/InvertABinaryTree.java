@@ -23,9 +23,9 @@ class InvertABinaryTree {
         assertThat(BinaryTree.toString(invert(BinaryTree.of("a", "b", "c", "d", "e", "f")))).isEqualTo("a, c, b, null, f, e, d");
     }
 
-    private <T> BinaryTreeNode<T> invert(BinaryTreeNode<T> node) {
+    private <E> BinaryTreeNode<E> invert(BinaryTreeNode<E> node) {
         if (node != null) {
-            BinaryTreeNode<T> temp = node.right;
+            BinaryTreeNode<E> temp = node.right;
             node.right = node.left;
             node.left = temp;
 

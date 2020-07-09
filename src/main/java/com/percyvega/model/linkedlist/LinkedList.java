@@ -1,17 +1,17 @@
 package com.percyvega.model.linkedlist;
 
-public class LinkedList {
+public abstract class LinkedList {
 
     @SafeVarargs
-    public static <T> LinkedListNode<T> of(T... dataArray) {
+    public static <E> LinkedListNode<E> of(E... dataArray) {
         return of(dataArray, 0);
     }
 
-    private static <T> LinkedListNode<T> of(T[] dataArray, int dataIndex) {
+    private static <E> LinkedListNode<E> of(E[] dataArray, int dataIndex) {
         if (dataArray.length <= dataIndex) {
             return null;
         } else {
-            T data = dataArray[dataIndex];
+            E data = dataArray[dataIndex];
             return new LinkedListNode<>(data, of(dataArray, ++dataIndex));
         }
     }

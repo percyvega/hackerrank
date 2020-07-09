@@ -3,22 +3,22 @@ package com.percyvega.model.binarytree;
 /**
  * This is a Binary Tree node which represents
  */
-public class BinaryTreeNode<T> {
+public class BinaryTreeNode<E> {
 
-    public T value;
-    public BinaryTreeNode<T> left;
-    public BinaryTreeNode<T> right;
+    public E value;
+    public BinaryTreeNode<E> left;
+    public BinaryTreeNode<E> right;
 
-    public static <T> BinaryTreeNode<T> of(T value) {
+    public static <E> BinaryTreeNode<E> of(E value) {
         return BinaryTreeNode.of(value, null, null);
     }
 
-    public static <T> BinaryTreeNode<T> of(T value, BinaryTreeNode<T> left) {
+    public static <E> BinaryTreeNode<E> of(E value, BinaryTreeNode<E> left) {
         return BinaryTreeNode.of(value, left, null);
     }
 
-    public static <T> BinaryTreeNode<T> of(T value, BinaryTreeNode<T> left, BinaryTreeNode<T> right) {
-        BinaryTreeNode<T> node = new BinaryTreeNode<>();
+    public static <E> BinaryTreeNode<E> of(E value, BinaryTreeNode<E> left, BinaryTreeNode<E> right) {
+        BinaryTreeNode<E> node = new BinaryTreeNode<>();
         node.value = value;
         node.left = left;
         node.right = right;

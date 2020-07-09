@@ -9,13 +9,13 @@ import java.util.List;
  */
 public abstract class BinaryTreePrinter {
 
-    public static <T extends Comparable<?>> void printNode(BinaryTreeNode<T> root) {
+    public static <E extends Comparable<E>> void printNode(BinaryTreeNode<E> root) {
         int maxLevel = BinaryTreePrinter.maxLevel(root);
 
         printNodeInternal(Collections.singletonList(root), 1, maxLevel);
     }
 
-    private static <T extends Comparable<?>> void printNodeInternal(List<BinaryTreeNode<T>> nodes, int level, int maxLevel) {
+    private static <E extends Comparable<E>> void printNodeInternal(List<BinaryTreeNode<E>> nodes, int level, int maxLevel) {
         if (nodes.isEmpty() || BinaryTreePrinter.isAllElementsNull(nodes))
             return;
 
@@ -26,8 +26,8 @@ public abstract class BinaryTreePrinter {
 
         BinaryTreePrinter.printWhitespaces(firstSpaces);
 
-        List<BinaryTreeNode<T>> newNodes = new ArrayList<>();
-        for (BinaryTreeNode<T> node : nodes) {
+        List<BinaryTreeNode<E>> newNodes = new ArrayList<>();
+        for (BinaryTreeNode<E> node : nodes) {
             if (node != null && node.value != null) {
                 System.out.print(node.value);
                 newNodes.add(node.left);
@@ -76,14 +76,14 @@ public abstract class BinaryTreePrinter {
             System.out.print(" ");
     }
 
-    private static <T extends Comparable<?>> int maxLevel(BinaryTreeNode<T> node) {
+    private static <E extends Comparable<E>> int maxLevel(BinaryTreeNode<E> node) {
         if (node == null)
             return 0;
 
         return Math.max(BinaryTreePrinter.maxLevel(node.left), BinaryTreePrinter.maxLevel(node.right)) + 1;
     }
 
-    private static <T> boolean isAllElementsNull(List<T> list) {
+    private static <E> boolean isAllElementsNull(List<E> list) {
         for (Object object : list) {
             if (object != null)
                 return false;

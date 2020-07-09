@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ValidateBalancedParentheses {
 
-    private String openingParentheses = "[({";
-    private String closingParentheses = "])}";
+    private final String openingParentheses = "[({";
+    private final String closingParentheses = "])}";
 
     @Test
     void isValidTest() {

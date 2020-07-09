@@ -5,17 +5,17 @@ import java.util.List;
 
 public abstract class BinaryTree {
 
-    public static <T> BinaryTreeNode<T> of(T... values) {
-        List<BinaryTreeNode<T>> nodesList = new ArrayList<>(values.length);
+    public static <E> BinaryTreeNode<E> of(E... values) {
+        List<BinaryTreeNode<E>> nodesList = new ArrayList<>(values.length);
 
-        BinaryTreeNode<T> rootNode = BinaryTreeNode.of(values[0]);
+        BinaryTreeNode<E> rootNode = BinaryTreeNode.of(values[0]);
         nodesList.add(rootNode);
 
         for (int i = 1; i < values.length; i++) {
-            BinaryTreeNode<T> iNode = BinaryTreeNode.of(values[i]);
+            BinaryTreeNode<E> iNode = BinaryTreeNode.of(values[i]);
             nodesList.add(iNode);
 
-            BinaryTreeNode<T> parentNode = nodesList.get((int) Math.ceil(i / 2d) - 1);
+            BinaryTreeNode<E> parentNode = nodesList.get((int) Math.ceil(i / 2d) - 1);
             if (i % 2 == 1) {
                 parentNode.left = iNode;
             } else {
@@ -26,7 +26,7 @@ public abstract class BinaryTree {
         return rootNode;
     }
 
-    public static <T> boolean isBalanced(BinaryTreeNode<T> node) {
+    public static <E> boolean isBalanced(BinaryTreeNode<E> node) {
         if (node.left == null && node.right == null) {
             return true;
         }
@@ -38,7 +38,7 @@ public abstract class BinaryTree {
         return isBalanced(node.left) && isBalanced(node.right);
     }
 
-    public static <T> int height(BinaryTreeNode<T> node) {
+    public static <E> int height(BinaryTreeNode<E> node) {
         if (node == null) {
             return 0;
         }
@@ -46,7 +46,7 @@ public abstract class BinaryTree {
         return 1 + Math.max(height(node.left), height(node.right));
     }
 
-    public static <T> String toString(BinaryTreeNode<T> node) {
+    public static <E> String toString(BinaryTreeNode<E> node) {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 1; i <= BinaryTree.height(node); i++) {
@@ -56,12 +56,12 @@ public abstract class BinaryTree {
         return sb.toString();
     }
 
-    private static <T> void appendValues(StringBuilder sb, BinaryTreeNode<T> node, int printThisLevel) {
+    private static <E> void appendValues(StringBuilder sb, BinaryTreeNode<E> node, int printThisLevel) {
         if (printThisLevel == 1) {
             appendValueOf(sb, node);
         } else {
-            BinaryTreeNode<T> nodeLeft = null;
-            BinaryTreeNode<T> nodeRight = null;
+            BinaryTreeNode<E> nodeLeft = null;
+            BinaryTreeNode<E> nodeRight = null;
             if (node != null) {
                 nodeLeft = node.left;
                 nodeRight = node.right;
@@ -71,14 +71,14 @@ public abstract class BinaryTree {
         }
     }
 
-    private static <T> void appendValueOf(StringBuilder sb, BinaryTreeNode<T> node) {
+    private static <E> void appendValueOf(StringBuilder sb, BinaryTreeNode<E> node) {
         if (sb.length() != 0) {
             sb.append(", ");
         }
         if (node != null) {
             sb.append(node.value);
         } else {
-            sb.append((T) null);
+            sb.append((E) null);
         }
     }
 
