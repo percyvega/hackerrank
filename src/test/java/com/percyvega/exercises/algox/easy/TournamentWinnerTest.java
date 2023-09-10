@@ -17,12 +17,7 @@ public class TournamentWinnerTest {
 
         for (int i = 0; i < competitions.size(); i++) {
             String winner = competitions.get(i).get(results.get(i) == 1 ? 0 : 1);
-            Integer totalScore = trackScores.get(winner);
-            if (totalScore == null) {
-                trackScores.put(winner, 3);
-            } else {
-                trackScores.put(winner, totalScore + 3);
-            }
+            trackScores.merge(winner, 3, Integer::sum);
         }
 
         Map.Entry<String, Integer> winner = trackScores.entrySet().stream().max((o1, o2) -> o1.getValue() - o2.getValue()).get();
