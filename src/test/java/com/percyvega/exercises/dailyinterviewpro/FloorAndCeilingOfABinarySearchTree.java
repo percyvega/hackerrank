@@ -1,7 +1,7 @@
 package com.percyvega.exercises.dailyinterviewpro;
 
+import com.percyvega.model.binarytree.BinaryTreeUtils;
 import com.percyvega.model.binarytree.BinaryTree;
-import com.percyvega.model.binarytree.BinaryTreeNode;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 
@@ -39,42 +39,42 @@ class FloorAndCeilingOfABinarySearchTree {
 
     @Test
     void testThis1() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8), 8)).containsExactly(null, 8);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8), 8)).containsExactly(null, 8);
     }
 
     @Test
     void testThis2() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 10)).containsExactly(8, null);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4), 10)).containsExactly(8, null);
     }
 
     @Test
     void testThis3() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 8)).containsExactly(null, 8);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4), 8)).containsExactly(null, 8);
     }
 
     @Test
     void testThis4() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 6)).containsExactly(8, 4);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4), 6)).containsExactly(8, 4);
     }
 
     @Test
     void testThis5() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 4)).containsExactly(8, 4);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4), 4)).containsExactly(8, 4);
     }
 
     @Test
     void testThis6() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4), 2)).containsExactly(4, null);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4), 2)).containsExactly(4, null);
     }
 
     @Test
     void testThis7() {
-        assertThat(findCeilingAndFloor(BinaryTree.of(8, 4, 12, 2, 6, 10, 14), 5)).containsExactly(4, 6);
+        assertThat(findCeilingAndFloor(BinaryTreeUtils.of(8, 4, 12, 2, 6, 10, 14), 5)).containsExactly(4, 6);
     }
 
     @Test
     void testThis8() {
-        BinaryTreeNode<Integer> rootNode = BinaryTree.of(
+        BinaryTree<Integer> rootNode = BinaryTreeUtils.of(
                 8,
                 2, 12,
                 1, 4, 10, 14,
@@ -83,9 +83,9 @@ class FloorAndCeilingOfABinarySearchTree {
         assertThat(findCeilingAndFloor(rootNode, 5)).containsExactly(6, null);
     }
 
-    private List<Integer> findCeilingAndFloor(BinaryTreeNode<Integer> rootNode, int target) {
-        BinaryTreeNode<Integer> previousNode = null;
-        BinaryTreeNode<Integer> currentNode = rootNode;
+    private List<Integer> findCeilingAndFloor(BinaryTree<Integer> rootNode, int target) {
+        BinaryTree<Integer> previousNode = null;
+        BinaryTree<Integer> currentNode = rootNode;
 
         while (true) {
             Integer currentValue = currentNode.value;
@@ -119,7 +119,7 @@ class FloorAndCeilingOfABinarySearchTree {
         return getCeilingAndFloorList(previousNode, currentNode);
     }
 
-    private List<Integer> getCeilingAndFloorList(BinaryTreeNode<Integer> previousNode, BinaryTreeNode<Integer> currentNode) {
+    private List<Integer> getCeilingAndFloorList(BinaryTree<Integer> previousNode, BinaryTree<Integer> currentNode) {
         if (previousNode == null) {
             return Arrays.asList(null, currentNode.value);
         } else if (currentNode == null) {

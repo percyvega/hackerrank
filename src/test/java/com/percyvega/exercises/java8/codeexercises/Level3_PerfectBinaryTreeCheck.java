@@ -1,6 +1,6 @@
 package com.percyvega.exercises.java8.codeexercises;
 
-import com.percyvega.model.binarytree.BinaryTreeNode;
+import com.percyvega.model.binarytree.BinaryTree;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,7 +23,7 @@ public class Level3_PerfectBinaryTreeCheck {
         assertThat(isPerfectBinaryTree(SampleBinaryTrees.binaryTreeHeight6)).isFalse();
     }
 
-    private boolean isPerfectBinaryTree(BinaryTreeNode node) {
+    private boolean isPerfectBinaryTree(BinaryTree node) {
         if ((node.left == null && node.right == null)) {
             return true;
         } else if ((node.left != null && node.right != null)) {
@@ -35,7 +35,7 @@ public class Level3_PerfectBinaryTreeCheck {
         }
     }
 
-    private int getPerfectlyBinaryTreeHeight(int initialDepth, BinaryTreeNode node) {
+    private int getPerfectlyBinaryTreeHeight(int initialDepth, BinaryTree node) {
         if (node == null) {
             return initialDepth;
         } else {
@@ -46,41 +46,41 @@ public class Level3_PerfectBinaryTreeCheck {
 
 class SampleBinaryTrees {
 
-    public static BinaryTreeNode binaryTreeHeight0 = BinaryTreeNode.of(3);
+    public static BinaryTree binaryTreeHeight0 = BinaryTree.of(3);
 
-    public static BinaryTreeNode binaryTreeHeight1 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight1 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2),
-            BinaryTreeNode.of(4)
+            BinaryTree.of(2),
+            BinaryTree.of(4)
     );
 
-    public static BinaryTreeNode binaryTreeHeight2 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight2 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2),
+            BinaryTree.of(2),
             null
     );
 
-    public static BinaryTreeNode binaryTreeHeight3 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight3 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), BinaryTreeNode.of(8)),
+            BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
             null
     );
 
-    public static BinaryTreeNode binaryTreeHeight4 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight4 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), BinaryTreeNode.of(8)),
-            BinaryTreeNode.of(5)
+            BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
+            BinaryTree.of(5)
     );
 
-    public static BinaryTreeNode binaryTreeHeight5 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight5 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), BinaryTreeNode.of(8)),
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), BinaryTreeNode.of(8))
+            BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
+            BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8))
     );
 
-    public static BinaryTreeNode binaryTreeHeight6 = BinaryTreeNode.of(
+    public static BinaryTree binaryTreeHeight6 = BinaryTree.of(
             3,
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), BinaryTreeNode.of(8)),
-            BinaryTreeNode.of(2, BinaryTreeNode.of(4), null)
+            BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
+            BinaryTree.of(2, BinaryTree.of(4), null)
     );
 }

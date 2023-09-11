@@ -7,16 +7,16 @@ import java.util.List;
 /**
  * From https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram
  */
-public abstract class BinaryTreePrinter {
+public abstract class BinaryTreePrinterUtil {
 
-    public static <E extends Comparable<E>> void printNode(BinaryTreeNode<E> root) {
-        int maxLevel = BinaryTreePrinter.maxLevel(root);
+    public static <E extends Comparable<E>> void printNode(BinaryTree<E> root) {
+        int maxLevel = BinaryTreePrinterUtil.maxLevel(root);
 
         printNodeInternal(Collections.singletonList(root), 1, maxLevel);
     }
 
-    private static <E extends Comparable<E>> void printNodeInternal(List<BinaryTreeNode<E>> nodes, int level, int maxLevel) {
-        if (nodes.isEmpty() || BinaryTreePrinter.isAllElementsNull(nodes))
+    private static <E extends Comparable<E>> void printNodeInternal(List<BinaryTree<E>> nodes, int level, int maxLevel) {
+        if (nodes.isEmpty() || BinaryTreePrinterUtil.isAllElementsNull(nodes))
             return;
 
         int floor = maxLevel - level;
@@ -24,10 +24,10 @@ public abstract class BinaryTreePrinter {
         int firstSpaces = (int) Math.pow(2, (floor)) - 1;
         int betweenSpaces = (int) Math.pow(2, (floor + 1)) - 1;
 
-        BinaryTreePrinter.printWhitespaces(firstSpaces);
+        BinaryTreePrinterUtil.printWhitespaces(firstSpaces);
 
-        List<BinaryTreeNode<E>> newNodes = new ArrayList<>();
-        for (BinaryTreeNode<E> node : nodes) {
+        List<BinaryTree<E>> newNodes = new ArrayList<>();
+        for (BinaryTree<E> node : nodes) {
             if (node != null && node.value != null) {
                 System.out.print(node.value);
                 newNodes.add(node.left);
@@ -38,31 +38,31 @@ public abstract class BinaryTreePrinter {
                 System.out.print(" ");
             }
 
-            BinaryTreePrinter.printWhitespaces(betweenSpaces);
+            BinaryTreePrinterUtil.printWhitespaces(betweenSpaces);
         }
         System.out.println();
 
         for (int i = 1; i <= endgeLines; i++) {
             for (int j = 0; j < nodes.size(); j++) {
-                BinaryTreePrinter.printWhitespaces(firstSpaces - i);
+                BinaryTreePrinterUtil.printWhitespaces(firstSpaces - i);
                 if (nodes.get(j) == null) {
-                    BinaryTreePrinter.printWhitespaces(endgeLines + endgeLines + i + 1);
+                    BinaryTreePrinterUtil.printWhitespaces(endgeLines + endgeLines + i + 1);
                     continue;
                 }
 
                 if (nodes.get(j).left != null && nodes.get(j).left.value != null)
                     System.out.print("/");
                 else
-                    BinaryTreePrinter.printWhitespaces(1);
+                    BinaryTreePrinterUtil.printWhitespaces(1);
 
-                BinaryTreePrinter.printWhitespaces(i + i - 1);
+                BinaryTreePrinterUtil.printWhitespaces(i + i - 1);
 
                 if (nodes.get(j).right != null && nodes.get(j).right.value != null)
                     System.out.print("\\");
                 else
-                    BinaryTreePrinter.printWhitespaces(1);
+                    BinaryTreePrinterUtil.printWhitespaces(1);
 
-                BinaryTreePrinter.printWhitespaces(endgeLines + endgeLines - i);
+                BinaryTreePrinterUtil.printWhitespaces(endgeLines + endgeLines - i);
             }
 
             System.out.println();
@@ -76,11 +76,11 @@ public abstract class BinaryTreePrinter {
             System.out.print(" ");
     }
 
-    private static <E extends Comparable<E>> int maxLevel(BinaryTreeNode<E> node) {
+    private static <E extends Comparable<E>> int maxLevel(BinaryTree<E> node) {
         if (node == null)
             return 0;
 
-        return Math.max(BinaryTreePrinter.maxLevel(node.left), BinaryTreePrinter.maxLevel(node.right)) + 1;
+        return Math.max(BinaryTreePrinterUtil.maxLevel(node.left), BinaryTreePrinterUtil.maxLevel(node.right)) + 1;
     }
 
     private static <E> boolean isAllElementsNull(List<E> list) {
