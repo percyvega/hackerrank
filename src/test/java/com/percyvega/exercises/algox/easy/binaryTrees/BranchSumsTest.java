@@ -1,4 +1,4 @@
-package com.percyvega.exercises.algox.easy;
+package com.percyvega.exercises.algox.easy.binaryTrees;
 
 import com.percyvega.model.binarytree.BinaryTree;
 import com.percyvega.model.binarytree.BinaryTreeUtils;
