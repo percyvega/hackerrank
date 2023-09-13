@@ -1,30 +1,6 @@
 package com.percyvega.model.binarytree;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class BinaryTreeUtils {
-
-    public static <E> BinaryTree<E> of(E... values) {
-        List<BinaryTree<E>> nodesList = new ArrayList<>(values.length);
-
-        BinaryTree<E> rootNode = BinaryTree.of(values[0]);
-        nodesList.add(rootNode);
-
-        for (int i = 1; i < values.length; i++) {
-            BinaryTree<E> iNode = BinaryTree.of(values[i]);
-            nodesList.add(iNode);
-
-            BinaryTree<E> parentNode = nodesList.get((int) Math.ceil(i / 2d) - 1);
-            if (i % 2 == 1) {
-                parentNode.left = iNode;
-            } else {
-                parentNode.right = iNode;
-            }
-        }
-
-        return rootNode;
-    }
 
     public static <E> boolean isBalanced(BinaryTree<E> node) {
         if (node.left == null && node.right == null) {

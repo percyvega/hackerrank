@@ -1,5 +1,7 @@
 package com.percyvega.exercises.algox.easy.binaryTrees;
 
+import com.percyvega.model.binarytree.BinaryTree;
+import com.percyvega.model.binarytree.BinaryTreePrinterUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -8,7 +10,7 @@ public class FindClosestValueInBstTest {
 
     // Average: O(log(n)) time | O(1) space - where n is the number of nodes
     // Worst: O(n) time | O(1) space
-    public static int findClosestValueInBst(BST tree, int target) {
+    public static int findClosestValueInBst(BinaryTree<Integer> tree, int target) {
         int closestValue = tree.value;
 
         do {
@@ -16,7 +18,7 @@ public class FindClosestValueInBstTest {
                 closestValue = tree.value;
             }
 
-            if (tree.value > target) {
+            if (target < tree.value) {
                 tree = tree.left;
             } else {
                 tree = tree.right;
@@ -26,94 +28,33 @@ public class FindClosestValueInBstTest {
         return closestValue;
     }
 
-    static class BST {
-        public int value;
-        public BST left;
-        public BST right;
-
-        public BST(int value) {
-            this.value = value;
-        }
-
-        public BST(int value, BST left, BST right) {
-            this.value = value;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     @Test
     void testFindClosestValueInBst() {
-        BST tree = new BST(10,
-                new BST(
-                        5,
-                        new BST(
-                                2,
-                                new BST(1),
-                                null
-                        ),
-                        new BST(5)
-                ),
-                new BST(
-                        15,
-                        new BST(
-                                13,
-                                null,
-                                new BST(14)
-                        ),
-                        new BST(22)
-                )
+        BinaryTree<Integer> tree = BinaryTree.of(
+                10,
+                5, 15,
+                2, 9, 13, 22
         );
-        int target = 12;
-        assertThat(findClosestValueInBst(tree, target)).isEqualTo(13);
-
-        tree = new BST(100,
-                new BST(
-                        5,
-                        new BST(
-                                2,
-                                new BST(
+        tree.right.left.right(14);
+        tree.left.left.right(3);
+        tree.left.left.left(
+                BinaryTree.of(
+                        1,
+                        BinaryTree.of(-51, -403),
+                        BinaryTree.of(1,
+                                null,
+                                BinaryTree.of(
                                         1,
-                                        new BST(
-                                                -51,
-                                                new BST(-403),
-                                                null
-                                        ),
-                                        new BST(
-                                                1,
-                                                null,
-                                                new BST(
-                                                        1,
-                                                        null,
-                                                        new BST(
-                                                                1,
-                                                                null,
-                                                                new BST(1)
-                                                        )
-                                                )
-                                        )
-                                ),
-                                new BST(3)
-                        ),
-                        new BST(
-                                15
+                                        null,
+                                        BinaryTree.of(1, null, 1)
+                                )
                         )
-                ),
-                new BST(
-                        15,
-                        new BST(
-                                13,
-                                null,
-                                new BST(14)
-                        ),
-                        new BST(22)
                 )
         );
-        target = -70;
-        assertThat(findClosestValueInBst(tree, target)).isEqualTo(-51);
 
-        target = -1;
-        assertThat(findClosestValueInBst(tree, target)).isEqualTo(1);
+        assertThat(findClosestValueInBst(tree, 12)).isEqualTo(13);
+        assertThat(findClosestValueInBst(tree, -70)).isEqualTo(-51);
+        assertThat(findClosestValueInBst(tree, -1)).isEqualTo(1);
     }
 
 }

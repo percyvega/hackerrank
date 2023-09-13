@@ -1,7 +1,6 @@
 package com.percyvega.exercises.algox.easy.binaryTrees;
 
 import com.percyvega.model.binarytree.BinaryTree;
-import com.percyvega.model.binarytree.BinaryTreeUtils;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +22,7 @@ public class BranchSumsTest {
     }
 
     private static void traverseTree(BinaryTree<Integer> root, List<Integer> branchSums, int sumAncestors) {
-        if(root != null) {
+        if (root != null) {
             if (root.left == null && root.right == null) {
                 branchSums.add(sumAncestors + root.value);
             } else {
@@ -35,9 +34,9 @@ public class BranchSumsTest {
 
     @Test
     void testBranchSums() {
-        List<Integer> branchSums = branchSums(BinaryTreeUtils.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        List<Integer> branchSums = branchSums(BinaryTree.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
-        for(int i : branchSums) {
+        for (int i : branchSums) {
             log.info(i);
         }
     }

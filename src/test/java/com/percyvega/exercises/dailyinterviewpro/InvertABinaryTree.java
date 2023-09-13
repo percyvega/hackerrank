@@ -16,11 +16,11 @@ class InvertABinaryTree {
 
     @Test
     void testThis() {
-        assertThat(BinaryTreeUtils.toString(invert(BinaryTreeUtils.of("a")))).isEqualTo("a");
-        assertThat(BinaryTreeUtils.toString(invert(BinaryTreeUtils.of("a", "b")))).isEqualTo("a, null, b");
-        assertThat(BinaryTreeUtils.toString(invert(BinaryTreeUtils.of("a", null, "c")))).isEqualTo("a, c, null");
-        assertThat(BinaryTreeUtils.toString(invert(BinaryTreeUtils.of("a", "b", "c")))).isEqualTo("a, c, b");
-        assertThat(BinaryTreeUtils.toString(invert(BinaryTreeUtils.of("a", "b", "c", "d", "e", "f")))).isEqualTo("a, c, b, null, f, e, d");
+        assertThat(BinaryTreeUtils.toString(invert(BinaryTree.of("a")))).isEqualTo("a");
+        assertThat(BinaryTreeUtils.toString(invert(BinaryTree.of("a", "b")))).isEqualTo("a, null, b");
+        assertThat(BinaryTreeUtils.toString(invert(BinaryTree.of("a", null, "c")))).isEqualTo("a, c, null");
+        assertThat(BinaryTreeUtils.toString(invert(BinaryTree.of("a", "b", "c")))).isEqualTo("a, c, b");
+        assertThat(BinaryTreeUtils.toString(invert(BinaryTree.of("a", "b", "c", "d", "e", "f")))).isEqualTo("a, c, b, null, f, e, d");
     }
 
     private <E> BinaryTree<E> invert(BinaryTree<E> node) {
