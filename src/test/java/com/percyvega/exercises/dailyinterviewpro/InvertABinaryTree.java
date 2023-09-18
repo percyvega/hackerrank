@@ -1,7 +1,7 @@
 package com.percyvega.exercises.dailyinterviewpro;
 
-import com.percyvega.model.binarytree.BinaryTreeUtils;
 import com.percyvega.model.binarytree.BinaryTree;
+import com.percyvega.model.binarytree.BinaryTreeUtils;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 

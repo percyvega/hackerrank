@@ -24,7 +24,9 @@ public class ConvertValueOfMap {
                 .collect(
                         Collectors.toMap(
                                 Map.Entry::getKey,
-                                e -> e.getValue().stream().map(Student::getName).collect(Collectors.toList())));
+                                e -> e.getValue().stream().map(Student::getName).collect(Collectors.toList())
+                        )
+                );
 
         assertThat(noteBooksNameMap.get(12)).containsExactly("Ben Affleck", "Clint Eastwood");
     }

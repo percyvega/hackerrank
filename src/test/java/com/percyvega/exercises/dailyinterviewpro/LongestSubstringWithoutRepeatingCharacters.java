@@ -21,7 +21,7 @@ class LongestSubstringWithoutRepeatingCharacters {
     }
 
     private String longestSubstringWithoutRepeatingCharacters(String completeString) {
-        String longestSubstring = new String();
+        String longestSubstring = "";
 
         if (completeString.length() == 1) {
             return completeString;

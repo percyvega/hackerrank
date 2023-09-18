@@ -23,7 +23,7 @@ public class Level3_PerfectBinaryTreeCheck {
         assertThat(isPerfectBinaryTree(SampleBinaryTrees.binaryTreeHeight6)).isFalse();
     }
 
-    private boolean isPerfectBinaryTree(BinaryTree node) {
+    private boolean isPerfectBinaryTree(BinaryTree<Integer> node) {
         if ((node.left == null && node.right == null)) {
             return true;
         } else if ((node.left != null && node.right != null)) {
@@ -35,7 +35,7 @@ public class Level3_PerfectBinaryTreeCheck {
         }
     }
 
-    private int getPerfectlyBinaryTreeHeight(int initialDepth, BinaryTree node) {
+    private int getPerfectlyBinaryTreeHeight(int initialDepth, BinaryTree<Integer> node) {
         if (node == null) {
             return initialDepth;
         } else {
@@ -46,39 +46,39 @@ public class Level3_PerfectBinaryTreeCheck {
 
 class SampleBinaryTrees {
 
-    public static BinaryTree binaryTreeHeight0 = BinaryTree.of(3);
+    public static BinaryTree<Integer> binaryTreeHeight0 = BinaryTree.of(3);
 
-    public static BinaryTree binaryTreeHeight1 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight1 = BinaryTree.of(
             3,
             BinaryTree.of(2),
             BinaryTree.of(4)
     );
 
-    public static BinaryTree binaryTreeHeight2 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight2 = BinaryTree.of(
             3,
             BinaryTree.of(2),
             null
     );
 
-    public static BinaryTree binaryTreeHeight3 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight3 = BinaryTree.of(
             3,
             BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
             null
     );
 
-    public static BinaryTree binaryTreeHeight4 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight4 = BinaryTree.of(
             3,
             BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
             BinaryTree.of(5)
     );
 
-    public static BinaryTree binaryTreeHeight5 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight5 = BinaryTree.of(
             3,
             BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
             BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8))
     );
 
-    public static BinaryTree binaryTreeHeight6 = BinaryTree.of(
+    public static BinaryTree<Integer> binaryTreeHeight6 = BinaryTree.of(
             3,
             BinaryTree.of(2, BinaryTree.of(4), BinaryTree.of(8)),
             BinaryTree.of(2, BinaryTree.of(4), null)

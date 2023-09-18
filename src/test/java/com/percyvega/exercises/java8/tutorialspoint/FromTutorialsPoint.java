@@ -4,6 +4,9 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j2
 public class FromTutorialsPoint {
@@ -11,13 +14,16 @@ public class FromTutorialsPoint {
     @Test
     void test1() {
         List<String> stringList = Arrays.asList("Percy", "Francesca", "Nicholas", "Isabella");
-        log.info(stringList);
+        assertThat(stringList).containsExactly("Percy", "Francesca", "Nicholas", "Isabella");
+
         stringList.sort((o1, o2) -> o1.length() - o2.length());
-        log.info(stringList);
+        assertThat(stringList).containsExactly("Percy", "Nicholas", "Isabella", "Francesca");
+
         stringList.sort(Comparator.comparingInt(String::length));
-        log.info(stringList);
+        assertThat(stringList).containsExactly("Percy", "Nicholas", "Isabella", "Francesca");
+
         stringList.sort(String::compareTo);
-        log.info(stringList);
+        assertThat(stringList).containsExactly("Francesca", "Isabella", "Nicholas", "Percy");
     }
 
     @Test
@@ -28,27 +34,30 @@ public class FromTutorialsPoint {
 
     @Test
     void unique_squares_of_numbers() {
-        List<Integer> integers = Arrays.asList(1, 2, 3, 3, 4, 5);
-        integers.stream()
+        List<Integer> list = Arrays.asList(1, 2, 3, 3, 4, 5);
+        List<Integer> unique = list.stream()
                 .distinct()
                 .map(i -> i * i)
-                .forEach(log::info);
+                .toList();
+        assertThat(unique).containsExactly(1, 4, 9, 16, 25);
     }
 
     @Test
     void printCountEmptyStrings() {
         List<String> stringList = Arrays.asList("Percy", "", "Francesca", "", "Nicholas", "", "Isabella");
-        log.info(stringList.stream()
-                .filter(s -> s.length() == 0)
-                .count());
+        long count = stringList.stream()
+                .filter(String::isEmpty)
+                .count();
+        assertThat(count).isEqualTo(3);
     }
 
     @Test
     void printSortedOrder() {
         List<String> stringList = Arrays.asList("Percy", "Francesca", "Nicholas", "Isabella");
-        stringList.stream()
+        List<String> sortedList = stringList.stream()
                 .sorted()
-                .forEach(log::info);
+                .collect(Collectors.toList());
+        assertThat(sortedList).containsExactly("Francesca", "Isabella", "Nicholas", "Percy");
     }
 
     @Test
@@ -57,15 +66,15 @@ public class FromTutorialsPoint {
 
         Optional<Integer> max = integers.stream()
                 .max(Comparator.comparingInt(o -> o));
-        log.info(max.isPresent() ? max.get() : "");
+        assertThat(max.get()).isEqualTo(5);
     }
 
     @Test
     void get_the_sum_of_all_numbers() {
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
 
-        log.info(integers.stream()
-                .reduce(0, Integer::sum));
+        assertThat(integers.stream()
+                .reduce(0, Integer::sum)).isEqualTo(15);
     }
 
     @Test
@@ -73,7 +82,7 @@ public class FromTutorialsPoint {
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
 
         IntSummaryStatistics intSummaryStatistics = integers.stream().mapToInt(x -> x).summaryStatistics();
-        log.info(intSummaryStatistics.getAverage());
+        assertThat(intSummaryStatistics.getAverage()).isEqualTo(3);
     }
 
 }

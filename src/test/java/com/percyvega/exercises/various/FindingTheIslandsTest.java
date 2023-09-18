@@ -1,7 +1,6 @@
 package com.percyvega.exercises.various;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.percyvega.model.Pair;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Given a matrix of size WxH, find the islands of (areas joined by) 1s, whether vertically, horizontally or diagonally.
  * Look at the test cases for examples.
  */
-class FindingTheIslands {
+class FindingTheIslandsTest {
 
     @Test
     void test0() {
@@ -26,17 +25,7 @@ class FindingTheIslands {
                 {0, 0, 1, 0}};
         List<List<Pair<Integer, Integer>>> islandsOf1s = obtainIslands(matrix);
 
-        printIsland(islandsOf1s);
         assertEquals(5, islandsOf1s.size());
-    }
-
-    private void printIsland(List<List<Pair<Integer, Integer>>> islandsOf1s) {
-        for (List<Pair<Integer, Integer>> island : islandsOf1s) {
-            for (Pair<Integer, Integer> pair : island) {
-                System.out.print("[" + pair.getKey() + ", " + pair.getValue() + "]");
-            }
-            System.out.println();
-        }
     }
 
     @Test
@@ -50,7 +39,6 @@ class FindingTheIslands {
                 {0, 0, 1, 0, 1}};
         List<List<Pair<Integer, Integer>>> islandsOf1s = obtainIslands(matrix);
 
-        printIsland(islandsOf1s);
         assertEquals(4, islandsOf1s.size());
     }
 
@@ -93,11 +81,4 @@ class FindingTheIslands {
         }
     }
 
-}
-
-@Data
-@AllArgsConstructor
-class Pair<F, S> {
-    private F key;
-    private S value;
 }

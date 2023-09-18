@@ -67,10 +67,7 @@ class WordSearch {
                 return false;
             }
         }
-        if (iTarget == target.length) {
-            return true;
-        }
-        return false;
+        return iTarget == target.length;
     }
 
     private boolean isHorizontalWordFoundAt(char[][] matrix, int i, int j, char[] target) {
@@ -80,11 +77,7 @@ class WordSearch {
                 return false;
             }
         }
-        if (iTarget == target.length) {
-            return true;
-        }
-
-        return false;
+        return iTarget == target.length;
     }
 
 }

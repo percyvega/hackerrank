@@ -9,6 +9,7 @@ public class BinaryTree<E> {
     public BinaryTree<E> left;
     public BinaryTree<E> right;
 
+    @SafeVarargs
     public static <E> BinaryTree<E> of(E... values) {
         List<BinaryTree<E>> nodesList = new ArrayList<>(values.length);
 

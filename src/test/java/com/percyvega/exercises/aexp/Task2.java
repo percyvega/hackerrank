@@ -29,8 +29,6 @@ class Task2 {
             l++;
         }
 
-        printArrayOfLength(d, l);
-
         for (p = 1; p < l / 2 + 1; ++p) {
             int i;
             boolean ok = true;
@@ -45,19 +43,6 @@ class Task2 {
             }
         }
         return -1;
-    }
-
-    @Test
-    void testPrintArrayOfLength() {
-        printArrayOfLength(new int[]{1, 2, 3, 4, 5}, 3);
-    }
-
-    private void printArrayOfLength(int[] d, int l) {
-        StringBuilder toPrint = new StringBuilder();
-        for (int i = l - 1; i >= 0; i--) {
-            toPrint.append(d[i]);
-        }
-        System.out.println(toPrint);
     }
 
 }

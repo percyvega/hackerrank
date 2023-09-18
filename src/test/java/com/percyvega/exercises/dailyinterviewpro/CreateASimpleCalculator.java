@@ -32,9 +32,9 @@ class CreateASimpleCalculator {
     }
 
     private String calculateInParenthesis(String expression) {
-        while(true) {
+        while (true) {
             int iOpen = expression.lastIndexOf("(");
-            if(iOpen == -1) {
+            if (iOpen == -1) {
                 break;
             } else {
                 int iClose = expression.indexOf(")", iOpen);

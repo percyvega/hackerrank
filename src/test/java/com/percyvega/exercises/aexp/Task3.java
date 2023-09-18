@@ -2,37 +2,24 @@ package com.percyvega.exercises.aexp;
 
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 class Task3 {
 
-    private final static String L = "L";
+    public int solution(int[] A) {
+        int length = 1;
+        int nextIndex = 0;
 
-    public void solution(int N) {
-        for (int i = 1; i < N; i++) {
-            System.out.println(L);
+        while (A[nextIndex] != -1) {
+            ++length;
+            nextIndex = A[nextIndex];
         }
-        for (int i = 0; i < N; i++) {
-            System.out.print(L);
-        }
+
+        return length;
     }
 
     @Test
     void test1() {
-        solution(1);
+        assertThat(solution(new int[]{1, 4, -1, 3, 2})).isEqualTo(4);
     }
-
-    @Test
-    void test2() {
-        solution(2);
-    }
-
-    @Test
-    void test3() {
-        solution(3);
-    }
-
-    @Test
-    void test4() {
-        solution(4);
-    }
-
 }

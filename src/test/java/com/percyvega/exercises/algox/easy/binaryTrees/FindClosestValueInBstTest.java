@@ -1,7 +1,6 @@
 package com.percyvega.exercises.algox.easy.binaryTrees;
 
 import com.percyvega.model.binarytree.BinaryTree;
-import com.percyvega.model.binarytree.BinaryTreePrinterUtil;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

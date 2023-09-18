@@ -5,29 +5,29 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-class ShortestStringWithNDifferentChars {
+class ShortestStringWithNDifferentCharsTest {
 
     @Test
     void test0() {
         int numDiffChars = 7;
         String input = "aabcddeeeeeefghhhiabhcdttjk";
-        assertEquals("iabhcdt", getShortestStringWithNDifferentChars(numDiffChars, input));
+        assertThat(getShortestStringWithNDifferentChars(numDiffChars, input)).isEqualTo("iabhcdt");
     }
 
     @Test
     void test1() {
         int numDiffChars = 10;
         String input = "aabcddeeeeeefghhhiabhcdttjk";
-        assertEquals("efghhhiabhcdt", getShortestStringWithNDifferentChars(numDiffChars, input));
+        assertThat(getShortestStringWithNDifferentChars(numDiffChars, input)).isEqualTo("efghhhiabhcdt");
     }
 
     @Test
     void test2() {
         int numDiffChars = 11;
         String input = "aabcddeeeeeefghhhiabhcdttjk";
-        assertEquals("efghhhiabhcdttj", getShortestStringWithNDifferentChars(numDiffChars, input));
+        assertThat(getShortestStringWithNDifferentChars(numDiffChars, input)).isEqualTo("efghhhiabhcdttj");
     }
 
     private static String getShortestStringWithNDifferentChars(int numDiffChars, String input) {
@@ -79,7 +79,6 @@ class ShortestStringWithNDifferentChars {
             }
         }
 
-        System.out.println("n: " + n);
         return shortestString;
     }
 

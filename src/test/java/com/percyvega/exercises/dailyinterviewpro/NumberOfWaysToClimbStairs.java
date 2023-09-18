@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Log4j2
 class NumberOfWaysToClimbStairs {
 
-    private Map<Integer, Long> stairsWays = new HashMap<>();
+    private final Map<Integer, Long> stairsWays = new HashMap<>();
 
     @Test
     void testThis() {

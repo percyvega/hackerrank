@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  *      When N = 4 and S = {3,1,2}, there are 4 solutions: {1,3}, {1,1,1,1}, {1,1,2}, and {2,2}.
  *      When N = 10 and S = {2, 5, 3, 6}, there are 5 solutions: {2,2,2,2,2}, {2,2,3,3}, {2,2,6}, {2,3,5}, and {5,5}.
  */
-class AmountCombiningCoins {
+class AmountCombiningCoinsTest {
 
     @Test
     void test0() {
@@ -40,10 +40,6 @@ class AmountCombiningCoins {
     private static void calculateCombinations(int totalAmount, List<Integer> coinSet, List<Integer> listSoFar, List<List<Integer>> solutions) {
         if (totalAmount == 0) {
             solutions.add(listSoFar);
-            for (Integer integer : listSoFar) {
-                System.out.print(integer + " ");
-            }
-            System.out.println();
         } else if (totalAmount > 0) {
             for (Integer coinValue : coinSet) {
                 List<Integer> newCoinSet = coinSet.stream().filter(iCoinValue -> iCoinValue >= coinValue).collect(Collectors.toList());

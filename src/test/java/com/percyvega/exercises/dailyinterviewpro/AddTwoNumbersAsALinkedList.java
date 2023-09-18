@@ -22,7 +22,7 @@ class AddTwoNumbersAsALinkedList {
 
     @Test
     void test2() {
-        List<Integer> n1 = Arrays.asList(0);
+        List<Integer> n1 = List.of(0);
         List<Integer> n2 = Arrays.asList(3, 7, 8);
 
         assertThat(addTwoNumbers(n1, n2)).isEqualTo(Arrays.asList(3, 7, 8));

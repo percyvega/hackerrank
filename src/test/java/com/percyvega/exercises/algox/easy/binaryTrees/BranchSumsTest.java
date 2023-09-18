@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Log4j2
 public class BranchSumsTest {
 
@@ -36,9 +38,7 @@ public class BranchSumsTest {
     void testBranchSums() {
         List<Integer> branchSums = branchSums(BinaryTree.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 
-        for (int i : branchSums) {
-            log.info(i);
-        }
+        assertThat(branchSums).containsExactly(15, 16, 18, 10, 11);
     }
 
 }

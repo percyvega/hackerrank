@@ -1,6 +1,5 @@
 package com.percyvega.exercises.dailyinterviewpro;
 
-import com.percyvega.model.binarytree.BinaryTreeUtils;
 import com.percyvega.model.binarytree.BinaryTree;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
@@ -130,12 +129,8 @@ class FloorAndCeilingOfABinarySearchTree {
     }
 
     private boolean isBetween(Integer x, Integer y, Integer target) {
-        if ((x <= target && target <= y) ||
-                (y <= target && target <= x)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (x <= target && target <= y) ||
+                (y <= target && target <= x);
     }
 
 }

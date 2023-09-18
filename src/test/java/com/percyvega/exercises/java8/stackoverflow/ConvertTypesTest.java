@@ -12,8 +12,10 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Log4j2
-public class ConvertTypes {
+public class ConvertTypesTest {
 
     static List<ObjectA> objectAList = new ArrayList<>();
 
@@ -43,7 +45,13 @@ public class ConvertTypes {
                         )
                 );
 
-        log.info(collect);
+        assertThat(collect).containsExactlyInAnyOrderEntriesOf(
+                Map.of(
+                        "Salary", new ObjectB("Salary", 21000, 4100, 7100),
+                        "Budget", new ObjectB("Budget", 21000, 4100, 7100),
+                        "Bank", new ObjectB("Bank", 200, 250, 320)
+                )
+        );
     }
 
 }
