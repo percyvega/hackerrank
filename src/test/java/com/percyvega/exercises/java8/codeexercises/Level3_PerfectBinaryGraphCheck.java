@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * Write a method that checks if a binary tree is perfect.
  * TreeNode API methods: node.left and node.right.
  */
-public class Level3_PerfectBinaryTreeCheck {
+public class Level3_PerfectBinaryGraphCheck {
 
     @Test
     void isPerfectBinaryTree() {

@@ -1,11 +1,11 @@
-package com.percyvega.exercises.algox.easy.binaryTrees;
+package com.percyvega.exercises.algox.easy.binaryTree;
 
 import com.percyvega.model.binarytree.BinaryTree;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class EvaluateExpressionTreeTest {
+public class EvaluateExpressionGraphTest {
 
     // O(n) time | O(h) - where n is the number of nodes, and h is the height of the tree.
     public int evaluateExpressionTree(BinaryTree<Integer> tree) {

@@ -1,4 +1,4 @@
-package com.percyvega.exercises.algox.easy.binaryTrees;
+package com.percyvega.exercises.algox.easy.binaryTree;
 
 import com.percyvega.model.binarytree.BinaryTree;
 import org.junit.jupiter.api.Test;

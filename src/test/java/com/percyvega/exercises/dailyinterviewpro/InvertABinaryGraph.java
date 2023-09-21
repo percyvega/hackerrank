@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * So a tree A, B, C becomes A, C, B
  */
 @Log4j2
-class InvertABinaryTree {
+class InvertABinaryGraph {
 
     @Test
     void testThis() {

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j2
-public class BinaryTreeUtilsTest {
+public class BinaryGraphUtilsTest {
 
     @Test
     void not_balanced() {

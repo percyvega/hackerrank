@@ -10,7 +10,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Log4j2
-class FloorAndCeilingOfABinarySearchTree {
+class FloorAndCeilingOfABinarySearchGraph {
 
     @Test
     void test_isBetween() {
