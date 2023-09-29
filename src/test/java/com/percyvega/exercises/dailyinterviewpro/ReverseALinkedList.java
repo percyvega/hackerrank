@@ -1,7 +1,6 @@
 package com.percyvega.exercises.dailyinterviewpro;
 
 import com.percyvega.model.linkedlist.LinkedList;
-import com.percyvega.model.linkedlist.LinkedListNode;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 
@@ -18,8 +17,8 @@ public class ReverseALinkedList {
         assertThat(reverse(LinkedList.of(3)).toString()).isEqualTo("3");
     }
 
-    private <E> LinkedListNode<E> reverse(LinkedListNode<E> node) {
-        LinkedListNode<E> nextNode = node.next;
+    private <E> LinkedList<E> reverse(LinkedList<E> node) {
+        LinkedList<E> nextNode = node.next;
 
         if (nextNode == null) {
             return node;
@@ -30,11 +29,11 @@ public class ReverseALinkedList {
         }
 
         if (!nextNode.isReversed) {
-            E data1 = node.data;
-            E data2 = nextNode.data;
-            nextNode.data = data1;
+            E data1 = node.value;
+            E data2 = nextNode.value;
+            nextNode.value = data1;
             nextNode.isReversed = true;
-            node.data = data2;
+            node.value = data2;
             node.isReversed = true;
 
             reverse(node.next);
